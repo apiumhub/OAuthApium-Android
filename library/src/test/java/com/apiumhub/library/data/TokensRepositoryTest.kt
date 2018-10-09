@@ -3,8 +3,9 @@ package com.apiumhub.library.data
 import arrow.core.Either
 import arrow.core.Option
 import com.apiumhub.library.UnitTest
+import com.apiumhub.library.data.storage.SharedPreferencesService
+import com.apiumhub.library.data.storage.TokensStorage
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -16,7 +17,7 @@ import org.junit.jupiter.api.Test
 
 class TokensRepositoryTest : UnitTest() {
 
-    private lateinit var repository: TokensRepository
+    private lateinit var repository: TokensStorage
 
     private val service = mockk<SharedPreferencesService>(relaxed = true)
 
@@ -25,7 +26,7 @@ class TokensRepositoryTest : UnitTest() {
 
     @BeforeEach
     internal fun setUp() {
-        repository = TokensRepository(service, Gson())
+        repository = TokensStorage(service, Gson())
     }
 
     @Test
@@ -49,7 +50,7 @@ class TokensRepositoryTest : UnitTest() {
         val answer = repository.getTokens()
 
         answer.isLeft() shouldBe true
-        answer.getLeft() shouldBeInstanceOf ItemNotFound::class.java
+        answer.getLeft() shouldBeInstanceOf TokensStorage.ItemNotFound::class.java
     }
 
     @Test
@@ -61,7 +62,7 @@ class TokensRepositoryTest : UnitTest() {
         val answer = repository.getTokens()
 
         answer.isLeft() shouldBe true
-        answer.getLeft() shouldBeInstanceOf ParseException::class.java
+        answer.getLeft() shouldBeInstanceOf TokensStorage.ParseException::class.java
     }
 
     @Test

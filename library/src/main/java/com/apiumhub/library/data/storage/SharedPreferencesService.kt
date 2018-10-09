@@ -1,4 +1,4 @@
-package com.apiumhub.library.data
+package com.apiumhub.library.data.storage
 
 import android.content.Context
 import arrow.core.Option
@@ -19,7 +19,6 @@ class SharedPreferencesService(context: Context) {
     }
 
     companion object {
-
         const val SHARED_PREFERENCES_NAME = "OAuthApiumSP"
     }
 }

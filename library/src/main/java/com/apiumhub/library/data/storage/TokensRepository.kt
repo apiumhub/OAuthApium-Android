@@ -1,12 +1,12 @@
-package com.apiumhub.library.data
+package com.apiumhub.library.data.storage
 
 import arrow.core.*
+import com.apiumhub.library.data.AuthTokens
 import com.google.gson.Gson
 
-class TokensRepository(private val service: SharedPreferencesService, private val gson: Gson) {
-
+class TokensStorage(private val service: SharedPreferencesService, private val gson: Gson) {
     fun saveTokens(tokens: AuthTokens) =
-        service.putString(TOKENS_KEY, gson.toJson(tokens))
+            service.putString(TOKENS_KEY, gson.toJson(tokens))
 
     fun getTokens(): Either<Error, AuthTokens> = service
             .getString(TOKENS_KEY).fold(
@@ -27,7 +27,7 @@ class TokensRepository(private val service: SharedPreferencesService, private va
     companion object {
         const val TOKENS_KEY = "tokens"
     }
-}
 
-class ItemNotFound : Error()
-class ParseException : Error()
+    class ItemNotFound : Error()
+    class ParseException : Error()
+}
