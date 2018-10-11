@@ -1,7 +1,7 @@
-package com.apiumhub.library.data.storage
+package com.apiumhub.library.oauthapium.data.storage
 
 import arrow.core.*
-import com.apiumhub.library.data.AuthTokens
+import com.apiumhub.library.oauthapium.data.AuthTokens
 import com.google.gson.Gson
 
 class TokensStorage(private val service: SharedPreferencesService, private val gson: Gson) {
@@ -22,6 +22,10 @@ class TokensStorage(private val service: SharedPreferencesService, private val g
 
     private fun parse(json: String): Option<AuthTokens> =
             gson.fromJson(json, AuthTokens::class.java).toOption()
+
+    fun clear() {
+        service.clear()
+    }
 
     //TODO Move this inside shared preferences service
     companion object {

@@ -1,7 +1,9 @@
 package com.apiumhub.library
 
 import android.content.Context
-import com.apiumhub.library.data.network.AuthApi
+import com.apiumhub.library.oauthapium.OAuthApium
+import com.apiumhub.library.oauthapium.OAuthApiumBuilder
+import com.apiumhub.library.oauthapium.data.network.AuthApi
 import io.mockk.every
 import io.mockk.mockk
 import org.amshove.kluent.`should be`

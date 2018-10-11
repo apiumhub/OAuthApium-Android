@@ -3,8 +3,9 @@ package com.apiumhub.library.data
 import arrow.core.Either
 import arrow.core.Option
 import com.apiumhub.library.UnitTest
-import com.apiumhub.library.data.storage.SharedPreferencesService
-import com.apiumhub.library.data.storage.TokensStorage
+import com.apiumhub.library.oauthapium.data.AuthTokens
+import com.apiumhub.library.oauthapium.data.storage.SharedPreferencesService
+import com.apiumhub.library.oauthapium.data.storage.TokensStorage
 import com.google.gson.Gson
 import io.mockk.every
 import io.mockk.mockk

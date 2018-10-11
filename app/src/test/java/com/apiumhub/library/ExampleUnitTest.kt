@@ -1,4 +1,4 @@
-package com.apiumhub.oauthapium
+package com.apiumhub.library
 
 import org.junit.Test
 

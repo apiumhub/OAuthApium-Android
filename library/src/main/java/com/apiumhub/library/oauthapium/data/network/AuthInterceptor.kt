@@ -1,7 +1,7 @@
-package com.apiumhub.library.data.network
+package com.apiumhub.library.oauthapium.data.network
 
 import android.util.Log
-import com.apiumhub.library.OAuthApium
+import com.apiumhub.library.oauthapium.OAuthApium
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.net.HttpURLConnection

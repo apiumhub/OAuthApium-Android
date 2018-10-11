@@ -1,4 +1,4 @@
-package com.apiumhub.library.data.storage
+package com.apiumhub.library.oauthapium.data.storage
 
 import android.content.Context
 import arrow.core.Option
@@ -16,6 +16,10 @@ class SharedPreferencesService(context: Context) {
             putString(key, value)
             apply()
         }
+    }
+
+    fun clear() {
+        sharedPreferences.edit().clear().apply()
     }
 
     companion object {

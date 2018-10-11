@@ -1,6 +1,6 @@
-package com.apiumhub.library.data
+package com.apiumhub.library.oauthapium.data
 
-import com.apiumhub.library.core.extension.empty
+import com.apiumhub.library.oauthapium.core.extension.empty
 import com.google.gson.annotations.SerializedName
 
 data class AuthTokens(

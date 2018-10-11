@@ -1,2 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.apiumhub.library" />
+    package="com.apiumhub.library.oauthapium" />
