@@ -28,7 +28,7 @@ class OAuthApiumBuilder {
 
     fun build() {
         //TODO Validate: ::context.isInitialized
-        OAuthApium.init(TokensStorage(SharedPreferencesService(context), Gson()), AuthService(retrofitClient))
+        OAuthApium.init(TokensStorage(SharedPreferencesService(context), Gson()), AuthService(retrofitClient, refreshEndpoint))
     }
 
 }
