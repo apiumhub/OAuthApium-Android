@@ -52,7 +52,7 @@ object OAuthApium {
         storage.saveTokens(tokens)
     }
 
-    fun logou() {
+    fun logout() {
         storage.clear()
     }
 
