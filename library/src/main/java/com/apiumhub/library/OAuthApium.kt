@@ -1,6 +1,7 @@
 package com.apiumhub.library
 
 import android.content.Context
+import com.apiumhub.library.data.AuthTokens
 import com.apiumhub.library.data.network.AuthService
 import com.apiumhub.library.data.storage.SharedPreferencesService
 import com.apiumhub.library.data.storage.TokensStorage
@@ -37,7 +38,7 @@ object OAuthApium {
     lateinit var storage: TokensStorage
     lateinit var service: AuthService
 
-    fun init(storage: TokensStorage, service: AuthService) {
+    internal fun init(storage: TokensStorage, service: AuthService) {
         this.storage = storage
         this.service = service
         //TODO ::storage.isInitialized &&...
@@ -45,6 +46,10 @@ object OAuthApium {
 
     internal fun isInitialized(): Boolean {
         return ::storage.isInitialized && ::service.isInitialized
+    }
+
+    fun saveAuthTokens(tokens: AuthTokens) {
+        this.storage.saveTokens(tokens)
     }
 
 }
