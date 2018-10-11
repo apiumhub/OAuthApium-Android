@@ -4,7 +4,7 @@ import arrow.core.*
 import com.apiumhub.library.oauthapium.data.AuthTokens
 import com.google.gson.Gson
 
-class TokensStorage(private val service: SharedPreferencesService, private val gson: Gson) {
+internal class TokensStorage(private val service: SharedPreferencesService, private val gson: Gson) {
     fun saveTokens(tokens: AuthTokens) =
             service.putString(TOKENS_KEY, gson.toJson(tokens))
 
@@ -32,6 +32,6 @@ class TokensStorage(private val service: SharedPreferencesService, private val g
         const val TOKENS_KEY = "tokens"
     }
 
-    class ItemNotFound : Error()
-    class ParseException : Error()
+    internal class ItemNotFound : Error()
+    internal class ParseException : Error()
 }
