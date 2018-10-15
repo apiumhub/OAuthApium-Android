@@ -52,6 +52,8 @@ object OAuthApium {
         storage.saveTokens(tokens)
     }
 
+    fun isUserLoggedIn() = storage.getTokens().isRight()
+
     fun logout() {
         storage.clear()
     }
