@@ -13,3 +13,8 @@ data class AuthTokens(
         @SerializedName("refresh_token")
         val refreshToken: String = String.empty()
 )
+
+data class RefreshDto(
+        @SerializedName("refresh_token")
+        val refreshToken: String?
+)
